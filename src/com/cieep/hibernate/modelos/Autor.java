@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "autores")
@@ -16,7 +17,7 @@ public class Autor implements Serializable {
     private String nombre;
 
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true)
-    private ArrayList<Libro> libros;
+    private List<Libro> libros;
 
     public Autor() {
         libros = new ArrayList<>();
@@ -44,7 +45,7 @@ public class Autor implements Serializable {
         this.nombre = nombre;
     }
 
-    public ArrayList<Libro> getLibros() {
+    public List<Libro> getLibros() {
         return libros;
     }
 
