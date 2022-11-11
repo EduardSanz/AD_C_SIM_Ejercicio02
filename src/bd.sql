@@ -20,6 +20,7 @@ create table libros (
 
 create table alquileres (
     id int auto_increment primary key ,
+    fecha DATE not null ,
     id_abonado int,
     id_libro int,
     foreign key (id_libro) references libros(id),
